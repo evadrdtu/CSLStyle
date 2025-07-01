@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<style xmlns="http://purl.org/net/xbiblio/csl" version="1.0">
+  <info>
+    <title>IEEE (10 Authors) Fixed</title>
+    <id>http://www.zotero.org/styles/ieee-10-authors-fixed</id>
+    <link href="http://www.zotero.org/styles/ieee" rel="self"/>
+    <author>
+      <name>ChatGPT</name>
+    </author>
+    <category citation-format="numeric"/>
+    <category field="engineering"/>
+    <updated>2025-07-01T00:00:00+00:00</updated>
+    <summary>IEEE style modified to list up to 10 authors before et al.</summary>
+  </info>
+
+  <macro name="author">
+    <names variable="author" et-al-min="11" et-al-use-first="10" and="text" delimiter=", ">
+      <name form="long" initialize-with=". " name-as-sort-order="all"/>
+      <label form="short" prefix=", " text-case="lowercase"/>
+    </names>
+  </macro>
+
+  <citation collapse="citation-number">
+    <layout prefix="[" suffix="]" delimiter=", ">
+      <text variable="citation-number"/>
+    </layout>
+  </citation>
+
+  <bibliography et-al-min="11" et-al-use-first="10" second-field-align="flush">
+    <layout suffix="." delimiter=". ">
+      <text variable="citation-number" prefix="[" suffix="]"/>
+      <text macro="author"/>
+      <text variable="title" font-style="italic"/>
+      <text variable="container-title"/>
+      <text variable="publisher"/>
+      <date variable="issued">
+        <date-part name="year"/>
+      </date>
+      <text variable="page"/>
+    </layout>
+  </bibliography>
+</style>
